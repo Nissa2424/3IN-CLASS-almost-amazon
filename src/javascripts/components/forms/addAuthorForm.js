@@ -1,5 +1,5 @@
-import { createAuthorSubmitEvent } from '../../events/formEvents';
-import clearDom from "../../helpers/data/clearDom";
+/* import { createAuthorSubmitEvent } from '../../events'; */
+import clearDom from '../../helpers/clearDom';
 
 const addAuthorForm = () => {
   clearDom();
@@ -7,11 +7,11 @@ const addAuthorForm = () => {
   document.querySelector('#form-container').innerHTML = `
     <form id="submit-author-form" class="mb-4">
       <div class="form-group">
-        <label for="firstName">Author First Name</label>
+        <label for="first_name">Author First Name</label>
         <input type="text" class="form-control" id="firstName" placeholder="Enter Author first name" required>
       </div>
       <div class="form-group">
-        <label for="lastName">Author Last Name</label>
+        <label for="last_name">Author Last Name</label>
         <input type="text" class="form-control" id="lastName" placeholder="Enter Author last name" required>
       </div>
       <div class="form-group">
@@ -24,8 +24,6 @@ const addAuthorForm = () => {
       </div>
       <button type="submit" id="submit-author" class="btn btn-primary">Submit Author</button>
     </form>`;
-
-  document.querySelector('#submit-author-form').addEventListener('submit', createAuthorSubmitEvent);
 };
 
 export default addAuthorForm;

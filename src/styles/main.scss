@@ -43,6 +43,7 @@ body {
 
   #add-button {
     margin: 0 auto;
+    text-align: center;
   }
 
   #form-container {
@@ -70,6 +71,7 @@ body {
 
       .sale-badge {
         font-size: 1em;
+        background-color: blue;
       }
     }
 
@@ -79,4 +81,10 @@ body {
       margin: 0 auto;
     }
   }
+}
+
+.author-card {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 30%;
 }
