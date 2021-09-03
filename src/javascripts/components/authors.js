@@ -1,5 +1,5 @@
 // FIXME: STUDENTS show your authors
-import clearDom from '../helpers/clearfolder';
+import clearDom from '../helpers/clearDom';
 
 const showAuthors = (array) => {
   // CREATE A BUTTON TO ADD AUTHOR

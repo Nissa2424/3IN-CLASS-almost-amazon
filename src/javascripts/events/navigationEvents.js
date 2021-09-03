@@ -1,7 +1,7 @@
-import signOut from '../helpers/auth/signOut';
 import { showAuthors } from '../components/authors';
-import { getAuthors, favoriteAuthors } from '../helpers/data/authorData';
 import { showBooks } from '../components/books';
+import signOut from '../helpers/auth/signOut';
+import { getAuthors, favoriteAuthors } from '../helpers/data/authorData';
 import { booksOnSale, getBooks } from '../helpers/data/bookData';
 
 // navigation events
@@ -12,13 +12,11 @@ const navigationEvents = () => {
 
   // BOOKS ON SALE
   document.querySelector('#sale-books').addEventListener('click', () => {
-    /* console.warn('Sale Books'); */
     booksOnSale().then(showBooks);
   });
 
   // ALL BOOKS
   document.querySelector('#all-books').addEventListener('click', () => {
-    /*  console.warn('All Books'); */
     getBooks().then(showBooks);
   });
 
@@ -38,8 +36,16 @@ const navigationEvents = () => {
   });
 
   // FIXME: STUDENTS Create an event listener for the Authors
+
+  document.querySelector('#authors').addEventListener('click', () => {
+    getAuthors().then(showAuthors);
+  });
+
+  // Favorite Authors
   document.querySelector('#favorite-authors').addEventListener('click', () => {
     favoriteAuthors().then(showAuthors);
+  });
+
   // 1. When a user clicks the authors link, make a call to firebase to get all authors
   // 2. Convert the response to an array because that is what the makeAuthors function is expecting
   // 3. If the array is empty because there are no authors, make sure to use the emptyAuthor function
